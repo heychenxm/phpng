@@ -1,0 +1,6 @@
+<ul class="toasts">
+    <li ng-repeat="toast in toast.get()" ng-class="toast.type">
+        <a class="close" ng-click="toast.cancel($index)"><span class="fa fa-times"></span></a>
+        {$ toast.typeMsg $}：{$ toast.msg $}
+    </li>
+</ul>

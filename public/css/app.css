@@ -1,0 +1,107 @@
+/*
+* @Author: myxuan
+* @Date:   2017-07-13 18:00:35
+* @Last Modified by:   myxuan
+* @Last Modified time: 2017-07-28 16:38:48
+*/
+
+@media (min-width: 768px) {
+    .accordion {
+        float: left;
+        width: 100%;
+    }
+    .content-container {
+        width: 100%;
+    }
+}
+@media (min-width: 992px) {
+    .accordion {
+        width: 17%;
+        max-width: 17rem;
+        position: fixed;
+        top: 50px;
+        left: 0;
+    }
+    .content-container {
+        width: 83%;
+    }
+}
+.container-fluid {
+    padding-left: 0;
+}
+
+.content-container {
+    float: right;
+    margin-top: 50px;
+    padding-top: 15px;
+}
+form[sf-schema="ctrl.schema"] .control-label {
+    width: 5rem;
+}
+form[sf-schema="ctrl.schema"] .form-control {
+    width: 15rem;
+    display: inline-block;
+}
+form[sf-schema="ctrl.schema"] .help-block {
+    margin-left: 5rem;
+}
+.has-feedback label~.form-control-feedback{
+    top: 0;
+}
+
+.option {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 15px;
+}
+.option input[type=checkbox],
+.option input[type=radio]{
+    margin-top: 8px;
+}
+.option .fa {
+    float: right;
+}
+.add-option {
+    margin-bottom: 10px;
+}
+.add-option input{
+    width: 80%;
+    display: inline-block;
+}
+label > label {
+    margin-bottom: 0;
+}
+
+input[type="radio"] {
+  z-index: 1;
+  width: 15px;
+  height: 1px;
+  cursor: pointer;
+}
+input[type="radio"]:focus:before {
+    outline: none;
+    border-color: #1394ff;
+}
+input[type="radio"]:disabled:before {
+    box-shadow: inset 0 0 0 4px #fff;
+    border-color: #ccc;
+    background: #ccc;
+}
+input[type="radio"]:checked:before {
+    background-color: #1394ff;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+input[type="radio"]:before {
+    content: '';
+    background: #fff;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+  }

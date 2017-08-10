@@ -1,0 +1,73 @@
+/*
+* @Author: myxuan
+* @Date:   2017-07-27 16:27:44
+* @Last Modified by:   myxuan
+* @Last Modified time: 2017-07-31 17:53:39
+*/
+table .fa {
+    display: block;
+}
+.search-box{
+    /*width: 15rem;*/
+    display: inline-block;
+    float: right;
+    margin-bottom: 1rem;
+}
+.search-box > .form-control{
+    width: auto;
+    display: inline-block;
+}
+.st-selected{
+    background-color: #b7ad9e !important;
+}
+.pagination{
+    margin: 0;
+}
+tfoot .form-control{
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+}
+.batchAction,
+.globalAction {
+    display: inline-block;
+}
+.rs-table {
+    margin-top: 1rem;
+}
+.dropdown-menu>li>a.bg-danger:hover{
+    background-color: #e4b9b9;
+}
+
+.simpleSelection {
+    align-self:center;
+    background:transparent;
+    padding: .1rem .5rem;
+    margin:0 1rem;
+    transition:all .5s ease;
+    color:#41403E;
+    font-size:2rem;
+    letter-spacing:1px;
+    outline:none;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border:solid 2px #41403E;
+}
+.simpleSelection:hover {
+    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+}
+qrcode {
+    position: relative;
+}
+.qrcode {
+    display: inline-block;
+}
+/*.qrcode:hover + .enlarge {
+    display: inline-block;
+}*/
+.enlarge {
+    display: none;
+    position: absolute;
+    top: -55px;
+    left: 50px;
+}

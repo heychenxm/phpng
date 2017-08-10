@@ -1,0 +1,28 @@
+<ul>
+    <li ng-repeat="parent in items">
+        <span class="btn btn-primary accordions-parent"
+            ng-click="openSidleBar($index)"
+            ng-if="parent.children.length > 0">
+            <i class="fa fa-{$ parent.icon $} accordion-left-icon" aria-hidden="true"></i>
+            <span>{$ parent.display_name $}</span>
+            <i class="fa fa-plus accordion-right-icon" aria-hidden="true"
+                ng-show="!parent.isActive && parent.children.length > 0"></i>
+            <i class="fa fa-minus accordion-right-icon" aria-hidden="true"
+                ng-show="parent.isActive && parent.children.length > 0"></i>
+        </span>
+        <a href="{$ parent.href $}" class="btn btn-primary accordions-parent"
+            ng-if="parent.children.length == 0"
+            ng-click="setCookies(parent)">
+            <i class="fa fa-{$ parent.icon $} accordion-left-icon" aria-hidden="true"></i>
+            <span>{$ parent.display_name $}</span>
+        </a>
+        <ul ng-show="parent.isActive">
+            <li ng-repeat="son in parent.children" ng-class="{'active': son.isActive}"
+                ng-click="setCookies(son)">
+                <a class="btn btn-info accordions-son" href="{$ son.href $}">
+                    {$ son.display_name $}
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
