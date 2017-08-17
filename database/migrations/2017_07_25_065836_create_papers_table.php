@@ -16,7 +16,7 @@ class CreatePapersTable extends Migration
         Schema::create('papers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('question_ids');
+            $table->string('title');
             $table->string('uid'); // 用md5加密time()，作为试卷生成二维码的标志
             $table->timestamps();
         });

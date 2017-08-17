@@ -72,9 +72,14 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('exam', 'ExamController@index');
         Route::get('exam/questions', 'ExamController@getQuestions');
         Route::post('exam/questions', 'ExamController@createQuestion');
+        Route::delete('exam/questions', 'ExamController@deleteQuestion');
         Route::get('exam/papers', 'ExamController@getPapers');
         Route::post('exam/papers', 'ExamController@createPaper');
         Route::get('exam/paper/{id}', 'ExamController@showPaper');
         Route::get('exam/papers/{id}', 'ExamController@getPaper');
+
+
+        // 分享页面
+        Route::get('share/exam/{id}', 'ShareController@sharePaper');
     });
 });

@@ -91,8 +91,6 @@ function directoryToArray($directory, $recursive = false) {
                     if($recursive) {
                         $array_items = array_merge($array_items, directoryToArray($directory. "/" . $file, $recursive));
                     }
-//                    $file = $directory . "/" . $file;
-//                    $array_items[] = preg_replace("/\/\//si", "/", $file);
                 } else {
                     if (strpos($file, '.html') === false){
                         $file = $directory . "/" . $file;
@@ -139,13 +137,21 @@ function sortList($list) {
     }
     return $list;
 }
-$path = realpath('.') . '/js';
+$path = realpath('.') . '/static';
 $fileList = directoryToArray($path, true);
-$list = handle($fileList, 'js');
+$list = handle($fileList, 'static');
 $files = sortList($list);
 foreach ($files as $file) {
     echo '<script src="' . '/' . $file . '"></script>';
 }
+$path = realpath('.') . '/web';
+$fileList = directoryToArray($path, true);
+$list = handle($fileList, 'web');
+$files = sortList($list);
+foreach ($files as $file) {
+    echo '<script src="' . '/' . $file . '"></script>';
+}
+
 ?>
 </body>
 </html>

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="login-wrapper" ng-controller="static.login.controller as ctrl" ng-class="{'form-success': !ctrl.flag}">
+    <div class="login-wrapper" ng-controller="web.login.controller as ctrl" ng-class="{'form-success': !ctrl.flag}">
         <div class="login-container">
             <h1>{$ ctrl.title $}</h1>
 

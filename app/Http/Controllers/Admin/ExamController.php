@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Option;
 use App\Models\Paper;
+use App\Models\Paper_question;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -77,13 +78,12 @@ class ExamController extends Controller
 
     public function getPaper($id)
     {
-        $paper = Paper::where('user_id', Auth::user()->id)->where('id', $id)->get();
-        $id_str = $paper[0]->question_ids;
-        $id_arr = explode(',', $id_str);
+        $paper = Paper::where('user_id', Auth::user()->id)->where('uid', $id)->get();
+        $arr = Paper_question::where('paper_id', $paper[0]->id)->get();
         $questions = array();
-        foreach ($id_arr as $item)
+        foreach ($arr as $item)
         {
-            $question = Question::find($item);
+            $question = Question::find($item->question_id);
             $options = Option::where('question_id', $question->id)->get();
             $question->options = $options;
             $questions[] = $question;

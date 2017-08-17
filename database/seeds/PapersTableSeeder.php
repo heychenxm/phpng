@@ -13,14 +13,14 @@ class PapersTableSeeder extends Seeder
     {
         DB::table('papers')->insert([
             'user_id' => 1,
-            'question_ids' => '1,2,3,4,5',
+            'title' => '测试试卷一',
             'uid' => md5(time()),
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
         ]);
         DB::table('papers')->insert([
             'user_id' => 1,
-            'question_ids' => '3,4,5,6,7',
+            'title' => '测试试卷二',
             'uid' => md5(time() + 10),
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
